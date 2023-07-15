@@ -10,17 +10,14 @@ def wind_turbine_fn(processes):
     # file used as reference for farm layout
     f = open('/rds/general/user/mc4117/home/wrf_simulations/windturbines_old.txt').read().split('\n')
     lat_turbines = []
-    lon_turbines = []
     
     for line in f[:-1]:
         split_line = line.split(' ')
         lat_turbines.append(float(split_line[0]))
-        lon_turbines.append(float(split_line[1]))
     
-    lon_unique = np.array(pd.DataFrame(lon_turbines).drop_duplicates().sort_values([0]))
     lat_unique = np.array(pd.DataFrame(lat_turbines).drop_duplicates().sort_values([0]))
     
-    lon_diff = lon_unique[1] - lon_unique[0]
+    # set the distance between the wind turbines to be 7 rotor diameters 
     lat_diff = lat_unique[1] - lat_unique[0]
     
     
