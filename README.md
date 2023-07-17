@@ -15,4 +15,6 @@ The fourth file `04_Power_prediction.ipynb` gives an example of how to post-proc
 
 The fifth file `05_Downstream_wake_prediction.ipynb` gives an example of how to post-process the outputs of only six WRF simulations to obtain an accurate long-term prediction of downstream wake from a wind farm.
 
+Finally WRF_namelist.txt is the specific input file to run WRF.
+
 The other files in this repository are supplementary files used to run the scripts detailed above.
